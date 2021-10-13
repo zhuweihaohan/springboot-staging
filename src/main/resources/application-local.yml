@@ -1,0 +1,22 @@
+#本地环境
+variable:
+  profiles: local
+server:
+  port: 8081
+  #数据库连接配置
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 20MB
+      resolve-lazily: true #设置为懒加载
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/premission?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&useAffectedRows=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

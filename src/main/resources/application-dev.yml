@@ -1,0 +1,33 @@
+#开发环境
+variable:
+  profiles: dev
+server:
+  port: 8081
+  #数据库连接配置
+spring:
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 20MB
+      resolve-lazily: true #设置为懒加载
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://10.128.12.15:3306/nlap_zhanjiang?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&useAffectedRows=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+file:
+  path: /data01/lhd/nlap_zhanjiang/userFiles
+  clusterFilePath: /data01/lhd/nlap_zhanjiang/tempFile/clusterFiles
+  HJZBFilePath: /data01/lhd/nlap_zhanjiang/tempFile/HJZBFiles
+  LDFilePath: /data01/lhd/nlap_zhanjiang/tempFile/LDFiles
+  SSMBFilePath: /data01/lhd/nlap_zhanjiang/tempFile/SSMBFiles
+  HJZBImgPath: /data01/lhd/nlap_zhanjiang/HJZBImgs
+  noTypeFilePath: /data01/lhd/nlap_zhanjiang/tempFile/noTypeFiles
+  PDFFilePath: /data01/lhd/nlap_zhanjiang/tempFile/PDFFiles
+arithmeticAddress: 10.128.12.15:8888/
+sortingAlgorithms: lstm   #分类算法
